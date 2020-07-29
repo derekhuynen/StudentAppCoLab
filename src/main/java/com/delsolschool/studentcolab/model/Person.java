@@ -12,9 +12,9 @@ import java.sql.Date;
 @Table(name = "person")
 public class Person {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @Column(name="id")
     private int id;
 
     @Column(name="firstname")
@@ -31,6 +31,7 @@ public class Person {
 
     @Column(name="email")
     private String email;
+
 
 
     public int getId() {
@@ -56,6 +57,8 @@ public class Person {
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
+
+
 
     public Date getDob() {
         return dob;

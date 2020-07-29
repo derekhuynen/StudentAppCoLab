@@ -29,6 +29,12 @@ public class PersonController {
         return person;
     }
 
+    @PostMapping("/persons")
+    public Person postPerson(@RequestBody Person person) {
+        personService.addPerson(person);
+        return person;
+    }
+
     @GetMapping("/persons/{id}")
     public Person getPersonById(@PathVariable int id) {
         return personService.getPersonById(id);
