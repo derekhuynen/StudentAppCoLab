@@ -1,3 +1,4 @@
+
 import React from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -9,7 +10,6 @@ import GroupIcon from "@material-ui/icons/Group";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-
 
 const useStyles = makeStyles(theme => ({
     paper: {
@@ -36,7 +36,6 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-
 export default function AddEmployee() {
     const classes = useStyles();
     const [firstLoad, setLoad] = React.useState(true);
@@ -50,7 +49,7 @@ export default function AddEmployee() {
 
     const handleDateChange = date => setSelectedDate(date);
     const handleNameChange = event => setName(event.target.value);
-    const handlDepartmentChange = event => setDepartment(event.target.value);
+    const handleDepartmentChange = event => setDepartment(event.target.value);
     const handleGenderChange = event => setGender(event.target.value);
 
     const [message, setMessage] = React.useState("Nothing saved in the session");
@@ -67,11 +66,11 @@ export default function AddEmployee() {
             },
             redirect: "follow",
             referrerPolicy: "no-referrer",
-            body: JSON.stringify(toInput) "Content-Type" header
+            body: JSON.stringify(toInput) //"Content-Type" header
         });
         let body = await response.json();
         console.log(body.id);
-        setMessage(body.id ? "Data sucessfully updated" : "Data updation failed");
+        setMessage(body.id ? "Data successfully updated" : "Data update failed");
     }
 
     const handleSubmit = variables => {
@@ -121,7 +120,7 @@ export default function AddEmployee() {
                                 value={department}
                                 id="department"
                                 label="Department"
-                                onChange={handlDepartmentChange}
+                                onChange={handleDepartmentChange}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
