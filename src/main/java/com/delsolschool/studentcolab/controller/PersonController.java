@@ -31,6 +31,7 @@ public class PersonController {
 
     @PostMapping("/persons")
     public Person postPerson(@RequestBody Person person) {
+
         personService.addPerson(person);
         return person;
     }

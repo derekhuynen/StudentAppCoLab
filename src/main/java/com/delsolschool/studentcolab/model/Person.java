@@ -2,8 +2,7 @@ package com.delsolschool.studentcolab.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.sql.Date;
@@ -13,8 +12,8 @@ import java.sql.Date;
 public class Person {
 
 
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id @Column(name="id")
+    @Id
+    @Column(name="id")
     private int id;
 
     @Column(name="firstname")
@@ -23,7 +22,7 @@ public class Person {
     @Column(name="lastname")
     private String lastname;
 
-    @Column(name="DOB")
+    @Column(name="dob")
     private Date dob;
 
     @Column(name="address")
