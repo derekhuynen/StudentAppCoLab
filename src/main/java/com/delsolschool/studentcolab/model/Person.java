@@ -1,13 +1,10 @@
 package com.delsolschool.studentcolab.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-
-import javax.persistence.Id;
-import javax.persistence.Table;
 import java.sql.Date;
 
+
 @Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS )
 @Table(name = "person")
 public class Person {
 
